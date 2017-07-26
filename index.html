@@ -1,11 +1,22 @@
-<!---todos.html -->
-<h1>Todos</h1>
-<ul>
-	{{range .Todos}}
-		{{if .Done}}
-			<li><s>{{.Task}}</s></li>
-		{{else}}
-			<li>{{.Task}}</li>
-		{{end}}
-	{{end}}
-</ul>o World
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Hi.</p>
+
+<script>
+
+var restaurants = [
+        "Monsoon",
+        "Jack Brown's",
+        "Tai Fresh",
+        "Market Street Market"
+];
+
+document.getElementById("hi").innertHTML = restaruants[0]; 
+
+</script> 
+
+</body>
+</html>
+
