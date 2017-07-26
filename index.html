@@ -13,7 +13,12 @@ var restaurants = [
         "Market Street Market"
 ];
 
-document.getElementById("hi").innertHTML = restaruants[0]; 
+Array.prototype.sample = function(){
+  return this[Math.floor(Math.random()*this.length)];
+}
+
+document.getElementById("hi").innerHTML = restaurants.sample();
+
 
 </script> 
 
