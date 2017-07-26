@@ -2,16 +2,20 @@
 <html>
 <body>
 
-<p id="demo">Hi.</p>
+<h2>My First Web Page</h2>
+<p>My First Paragraph.</p>
+
+<p id="demo"></p>
 
 <script>
-
 var restaurants = [
         "Monsoon",
         "Jack Brown's",
         "Tai Fresh",
         "Market Street Market"
 ];
+
+//var rand = restaurants[Math.floor(Math.random() * restaurants.length)];
 
 Array.prototype.sample = function(){
   return this[Math.floor(Math.random()*this.length)];
@@ -20,8 +24,10 @@ Array.prototype.sample = function(){
 document.getElementById("demo").innerHTML = restaurants.sample();
 
 
-</script> 
+
+</script>
 
 </body>
-</html>
+</html> 
+
 
