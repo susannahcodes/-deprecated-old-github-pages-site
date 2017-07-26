@@ -1,9 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"html/template"
+	"net/http"
+)
+
+type Todo struct {
+	Task string
+	Done bool
+}
 
 func main() {
-  var list [5] string
-  fmt.Println("emp:", a)
-  
-  }
+	tmpl := template.Must(template.ParseFiles("todos.html"))
+	todos := []Todo{
+		{"Learn Go", true},
+		{"Read Go Web Examples", true},
+		{"Create a web app in Go", false},
+	}
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		tmpl.Execute(w, struct{ Todos []Todo }{todos})
+	})
+
+	http.ListenAndServe(":8080", nil)
+}
+
